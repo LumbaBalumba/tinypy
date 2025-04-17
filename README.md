@@ -18,7 +18,7 @@ python -m tinypy                      # REPL (to be implemented)
 
 ```bash
 python -m venv venv && source venv/bin/activate
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 pytest -q            # run unit‑tests
 flake8               # style + spell‑check (codespell)
 ```
