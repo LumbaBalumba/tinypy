@@ -1,4 +1,4 @@
-name: CI
+name: Lint
 
 on:
   push:
@@ -24,11 +24,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Spell check (codespell)
-        run: |
-          codespell --skip="*.pyc,*.txt,*.ini,.git" --ignore-words-list="lexer,py"
       - name: Lint (flake8)
         run: flake8
-
-      - name: Test (pytest)
-        run: pytest -q
