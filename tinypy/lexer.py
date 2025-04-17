@@ -61,27 +61,33 @@ def t_NUMBER(t):
     t.value = float(t.value)
     return t
 
+
 def t_lbrace(t):
     r'\{'
     t.type = '{'
     return t
+
 
 def t_rbrace(t):
     r'\}'
     t.type = '}'
     return t
 
+
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
+
 
 def t_IDENT(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
     t.type = reserved.get(t.value, 'IDENT')
     return t
 
+
 def t_error(t):
     raise LexerError(f"Invalid token '{t.value}' at line {t.lineno}")
+
 
 t_ignore = ' \t'
 t_ignore_COMMENT = r'\#.*'
