@@ -50,8 +50,8 @@ t_RBRACKET = r'\]'
 
 # --- Multi-character tokens --------------------------------------------------
 
-t_WHILE = rf'{reserved["while"]}'
-t_PRINT = rf'{reserved["print"]}'
+t_WHILE = list(reserved.keys())[4]
+t_PRINT = list(reserved.keys())[5]
 
 t_ignore = ' \t'
 

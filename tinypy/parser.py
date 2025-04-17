@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 import ply.yacc as yacc
-# from typing import List
-# from .lexer import tokens
 from .ast_nodes import Number, Identifier, BinOp
 from .errors import SyntaxError_
 
