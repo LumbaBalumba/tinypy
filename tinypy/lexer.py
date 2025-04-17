@@ -23,14 +23,67 @@ tokens = [
     # Parentheses
     "LPAREN",
     "RPAREN",
+    "LBRACE",
+    "RBRACE",
+    # Multiple symbols
+    "EQUALITY",
+    "NOTEQUAL",
+    "LESSTHAN",
+    "GREATERTHAN",
+    "LESSEQUAL",
+    "GREATEREQUAL"
 ] + list(reserved.values())
 
 # --- Single‑character tokens -------------------------------------------------
 
-# Your code here
+t_LET = r'let'
+t_PLUS = r'\+'
+t_MINUS = r'-'
+t_STAR = r'\*'
+t_SLASH = r'/'
+t_ASSIGN = r'='
+t_LPAREN = r'\('
+t_RPAREN = r'\)'
+t_EQUALITY = r'=='
+t_NOTEQUAL = r'!='
+t_LESSTHAN = r'<'
+t_GREATERTHAN = r'>'
+t_LESSEQUAL = r'<='
+t_GREATEREQUAL = r'>='
+
 
 # --- Multi-character tokens --------------------------------------------------
 
 # Your code here
+
+def t_NUMBER(t):
+    r'\d+(\.\d+)?'
+    t.value = float(t.value)
+    return t
+
+def t_lbrace(t):
+    r'\{'
+    t.type = '{'
+    return t
+
+def t_rbrace(t):
+    r'\}'
+    t.type = '}'
+    return t
+
+def t_newline(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
+
+def t_IDENT(t):
+    r'[a-zA-Z_][a-zA-Z0-9_]*'
+    t.type = reserved.get(t.value, 'IDENT')
+    return t
+
+def t_error(t):
+    raise LexerError(f"Invalid token '{t.value}' at line {t.lineno}")
+
+t_ignore = ' \t'
+t_ignore_COMMENT = r'\#.*'
 
 lexer = lex.lex()
