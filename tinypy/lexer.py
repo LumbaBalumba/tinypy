@@ -57,7 +57,7 @@ t_GREATEREQUAL = r'>='
 # Your code here
 
 def t_NUMBER(t):
-    r'\d+(\.\d+)?'
+    r'-?\d+(\.\d+)?'
     t.value = float(t.value)
     return t
 
