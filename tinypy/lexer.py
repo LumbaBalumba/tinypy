@@ -23,8 +23,6 @@ tokens = [
     # Parentheses
     "LPAREN",
     "RPAREN",
-    "LBRACE",
-    "RBRACE",
     # Multiple symbols
     "EQUALITY",
     "NOTEQUAL",
@@ -64,13 +62,13 @@ def t_NUMBER(t):
 
 def t_lbrace(t):
     r'\{'
-    t.type = '{'
+    t.type = 'LBRACE'
     return t
 
 
 def t_rbrace(t):
     r'\}'
-    t.type = '}'
+    t.type = 'RBRACE'
     return t
 
 

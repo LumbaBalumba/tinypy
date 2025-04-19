@@ -1,6 +1,5 @@
 import sys as _sys
 """TinyPy package entry point."""
-# from importlib import metadata as _md
 
 __version__ = "0.1.0"
 
