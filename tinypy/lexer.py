@@ -44,27 +44,31 @@ t_ASSIGN = r"\="
 
 # --- Multi-character tokens --------------------------------------------------
 
+
 def t_NUMBER(t):
     r"\d+\.\d+|\d+"
-    t.value = float (t.value)
+    t.value = float(t.value)
     return t
+
 
 def t_IDENT(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value, 'IDENT')
     return t
 
+
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
+
 def t_error(t):
-    #print("Illegal character '%s' at line' %s'" % (t.value[0] , t.lexer.lineno ))
     raise LexerError
+
 
 # --- Ignoring commmnets and tabs -------------------------------------------------
 
 t_ignore_COMMENT = r'\#.*'
-t_ignore  = ' \t'
+t_ignore = ' \t'
 
 lexer = lex.lex()
