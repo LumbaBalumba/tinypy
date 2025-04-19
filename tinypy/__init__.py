@@ -1,6 +1,6 @@
-f"""TinyPy package entry point."""
-from importlib import metadata as _md
-
+"""TinyPy package entry point."""
+# from importlib import metadata as _md
+import sys as _sys
 __version__ = "0.1.0"
 
 # Errors re‑export
@@ -15,6 +15,5 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    import sys as _sys
 
     main(_sys.argv[1:])
