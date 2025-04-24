@@ -1,4 +1,4 @@
-"""PLY parser — skeleton for Lecture 3."""
+"""PLY parser."""
 
 from __future__ import annotations
 import ply.yacc as yacc
