@@ -1,4 +1,4 @@
-"""AST node classes (placeholders until Lecture 3)."""
+"""AST node classes (placeholders until Lecture 2)."""
 
 from __future__ import annotations
 from dataclasses import dataclass
