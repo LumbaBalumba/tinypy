@@ -1,5 +1,5 @@
 """Расширенный набор тестов парсера для Lecture 2.
-   Цель — покрыть подавляющее большинство веток правил.
+Цель — покрыть подавляющее большинство веток правил.
 """
 
 import pytest
@@ -11,7 +11,7 @@ from tinypy.errors import SyntaxError_
 
 def _parse_one(expr: str):
     """Parse expression and return single AST node."""
-    return parser.parse(expr, lexer=lexer)[0]
+    return parser.parse(expr, lexer=lexer)
 
 
 def test_left_associativity_minus():
@@ -40,8 +40,11 @@ def test_multiple_statements_semicolon():
 
 
 def test_multiple_statements_newline():
-    prog = parser.parse("""1+2
-3+4""", lexer=lexer)
+    prog = parser.parse(
+        """1+2
+3+4""",
+        lexer=lexer,
+    )
     assert len(prog) == 2
 
 
