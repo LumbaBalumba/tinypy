@@ -29,9 +29,6 @@ tokens = [
     # Braces
     "LBRACE",
     "RBRACE",
-    # Brackets
-    "LBRACKET",
-    "RBRACKET",
 ] + list(reserved.values())
 
 # --- Single‑character tokens -------------------------------------------------
@@ -45,8 +42,6 @@ t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_LBRACE = r'\{'
 t_RBRACE = r'\}'
-t_LBRACKET = r'\['
-t_RBRACKET = r'\]'
 
 # --- Multi-character tokens --------------------------------------------------
 
