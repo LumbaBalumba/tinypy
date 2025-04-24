@@ -40,8 +40,8 @@ def test_multiple_statements_semicolon():
 
 
 def test_multiple_statements_newline():
-    prog = parser.parse("1+2
-3+4", lexer=lexer)
+    prog = parser.parse("""1+2
+3+4""", lexer=lexer)
     assert len(prog) == 2
 
 
