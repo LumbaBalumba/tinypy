@@ -3,7 +3,7 @@ Extend in Lecture 2 (keywords, braces, etc.)
 """
 
 import ply.lex as lex
-from errors import LexerError
+from .errors import LexerError
 
 reserved = {
     "let": "LET",
