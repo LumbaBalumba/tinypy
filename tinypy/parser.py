@@ -4,30 +4,18 @@ from __future__ import annotations
 import ply.yacc as yacc
 from .ast_nodes import Number, Identifier, BinOp
 from .errors import SyntaxError_
+from .lexer import tokens
 
 
-# Precedence (filled gradually)
 precedence = (
     ("left", "PLUS", "MINUS"),
     ("left", "STAR", "SLASH"),
 )
 
-# Grammar rules (minimal expression parser)
 
-
-def p_program_expr_list(p):
-    """program : expr_list"""
-    p[0] = p[1]
-
-
-def p_expr_list_single(p):
-    """expr_list : expr"""
-    p[0] = [p[1]]
-
-
-def p_expr_list_append(p):
-    """expr_list : expr_list expr"""
-    p[0] = p[1] + [p[2]]
+def p_expr_multipleops(p):
+    """expr : expr SEMI expr"""
+    p[0] = [p[1], p[3]]
 
 
 def p_expr_number(p):
@@ -57,4 +45,4 @@ def p_error(p):
     raise SyntaxError_("Syntax error")
 
 
-parser = yacc.yacc(write_tables=False, debug=False)
+parser = yacc.yacc()
