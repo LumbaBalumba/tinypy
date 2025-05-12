@@ -1,5 +1,4 @@
-f"""TinyPy package entry point."""
-from importlib import metadata as _md
+"""TinyPy package entry point."""
 
 __version__ = "0.1.0"
 

@@ -1,6 +1,6 @@
 """Parser structure tests (Lecture 2)."""
 
-import pytest
+
 from tinypy.lexer import lexer
 from tinypy.parser import parser
 from tinypy.ast_nodes import Number, Identifier, BinOp

@@ -1,0 +1,52 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ASSIGN
+    ELSE
+    IF
+    LBRACE
+    LET
+    PRINT
+    RBRACE
+    WHILE
+
+Grammar
+
+Rule 0     S' -> expr
+Rule 1     expr -> expr SEMI expr
+Rule 2     expr -> expr NEWLINE expr
+Rule 3     expr -> NUMBER
+Rule 4     expr -> IDENT
+Rule 5     expr -> expr PLUS expr
+Rule 6     expr -> expr MINUS expr
+Rule 7     expr -> expr STAR expr
+Rule 8     expr -> expr SLASH expr
+Rule 9     expr -> LPAREN expr RPAREN
+
+Terminals, with rules where they appear
+
+ASSIGN               : 
+ELSE                 : 
+IDENT                : 4
+IF                   : 
+LBRACE               : 
+LET                  : 
+LPAREN               : 9
+MINUS                : 6
+NUMBER               : 3
+PLUS                 : 5
+PRINT                : 
+RBRACE               : 
+RPAREN               : 9
+SEMI                 : 1
+SLASH                : 8
+STAR                 : 7
+WHILE                : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+NEWLINE              : 2
+expr                 : 1 1 2 2 5 5 6 6 7 7 8 8 9 0
+

@@ -6,3 +6,7 @@ exclude =
     .git
     requirements.txt
     tests
+    tinypy/parser.out
+    tinypy/parsetab.py
+per-file-ignores =
+    /tinypy/parser.py:F401
