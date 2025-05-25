@@ -3,7 +3,7 @@
 from __future__ import annotations
 import sys
 from .lexer import lexer
-from .parser import parser
+#from .parser import parser
 from .interpreter import eval_node
 
 
